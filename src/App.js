@@ -10,8 +10,8 @@ import Profile from "./pages/profile/Profile";
 const App = () => {
   return (
     <div className="App font-opensans">
-      <Routes>
-        <Route index path="/" element={<HomePage />} />
+      <Routes  >
+        <Route exact path="/" element={<HomePage />} />
         <Route path="/blog/:id" element={<ArticalDetailPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
