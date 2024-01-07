@@ -91,7 +91,7 @@ const ArticalDetailPage = () => {
                         <SocialShareButtons
                             // url={encodeURI(window.location.href)}
                             // title={encodeURIComponent(data?.title)}
-                            // encodeURI takes url, if these is any wierd characters in url it converts into UTF-8 character formate
+                            // encodeURI takes url, if there is any wierd characters in url it converts into UTF-8 character formate
                             url={encodeURI(
                                 "facebook.com"
                             )}

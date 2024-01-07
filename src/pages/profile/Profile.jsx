@@ -43,7 +43,7 @@ const Profile = () => {
       dispatch(userActions.setUserInfo(data));
       localStorage.setItem("account", JSON.stringify(data));
       queryClient.invalidateQueries(["profile"]);  // refeching the data 
-      toast.success("Profile is updated"); // success msg showing
+      toast.success("Profile is updated"); 
     },
     onError: (error) => {
       toast.error(error.message);
@@ -87,7 +87,7 @@ const Profile = () => {
       <section className="container mx-auto px-5 py-10">
         <div className="w-full max-w-sm mx-auto">
             {/* questions ? if we don't have data it returns undefined instead of error */}
-          <ProfilePicture avatar={profileData?.avatar} />
+          <ProfilePicture avatar={profileData?.avtar} />
           <form onSubmit={handleSubmit(submitHandler)}>
 
             {/* name feild =========== */}

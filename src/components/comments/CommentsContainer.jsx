@@ -9,7 +9,7 @@ const CommentsContainer = ({ className, logginedUserId }) => {
   const [affectedComment, setAffectedComment] = useState(null)
   const mainComments = comments.filter((comment) => comment.parent === null);
 
-  console.log(comments)
+  console.log("comments", comments)
   useEffect(() => {
     //IIFE the fn calls itself.
     (async () => {
@@ -20,7 +20,7 @@ const CommentsContainer = ({ className, logginedUserId }) => {
 
   // adding comments 
   const addCommentsHandler = (value, parent = null, replyOnUser = null) => {
-    console.log(value)
+    console.log("value", value)
     const newComment = {
       _id: Math.random().toString(),
       user: {
@@ -86,7 +86,7 @@ const CommentsContainer = ({ className, logginedUserId }) => {
               key={comment._id}
               updateComment={updateCommentHandler}
               deleteComment={deleteComment}
-              replies = {getRepliesComment(comment._id)}
+              replies={getRepliesComment(comment._id)}
             />
           })
         }

@@ -15,13 +15,9 @@ const CropEasy = ({ photo, setOpenCrop }) => {
     const queryClient = useQueryClient();
     const dispatch = useDispatch();
 
-    const handleComplete = (croppedArea, croppedAreaPixel) => {
-        setCroppedAreaPixel(croppedAreaPixel)
-    }
-
-
     const { mutate, isLoading } = useMutation({
         mutationFn: ({ token, formData }) => {
+            console.log('HII', formData)
             return updateProfilePicture({
                 token: token,
                 formData: formData,
@@ -40,6 +36,11 @@ const CropEasy = ({ photo, setOpenCrop }) => {
         },
     });
 
+    const handleComplete = (croppedArea, croppedAreaPixel) => {
+        setCroppedAreaPixel(croppedAreaPixel)
+    }
+console.log("croppedArea",croppedAreaPixel);
+
     const handleCropImage = async () => {
         try {
             const croppedImg = await getCroppedImg(photo?.url, croppedAreaPixel);
@@ -50,6 +51,7 @@ const CropEasy = ({ photo, setOpenCrop }) => {
             const formData = new FormData();
             formData.append("profilePicture", file);
             mutate({ token: userState.userInfo.token, formData: formData })
+            console.log(formData);
 
         } catch (error) {
             toast.error(error.message);

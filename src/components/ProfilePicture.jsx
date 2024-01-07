@@ -34,16 +34,17 @@ const ProfilePicture = ({ avatar }) => {
                                     alt="profile pic" />
                             ) : (
                                 <div className=' w-full h-full bg-blue-50 flex justify-center items-center'>
-                                    <HiOutlineCamera />
+                                    <HiOutlineCamera className="w-7 h-auto text-primary" />
                                 </div>
                             )
                         }
                     </label>
-                    <input type="file" className=' sr-only' id='profilePicture'
+                    <input type="file" className='sr-only' id='profilePicture'
                         onChange={handleChangeFile}
                     />
                 </div>
-                <button type='button' className="border border-red-500 rounded-lg px-4 py-2 text-red-500">
+                <button type='button' 
+                className="border border-red-500 rounded-lg px-4 py-2 text-red-500">
                     Delete
                 </button>
             </div>
